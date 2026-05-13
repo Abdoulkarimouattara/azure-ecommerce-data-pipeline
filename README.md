@@ -60,10 +60,10 @@ Bronze Layer (Raw Data Storage)
 ## 📊 Pipeline Visualization
 
 ### Azure Data Factory Pipeline
-![Pipeline](./architecture/pipeline.png)
+![Pipeline](./architecture/adf_pipeline.png)
 
 ### Bronze Layer Output
-![Bronze](./architecture/bronze.png)
+![Bronze](./architecture/bronze_layer.png)
 
 ---
 
