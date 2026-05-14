@@ -96,14 +96,11 @@ Actual data is stored and processed in **Azure Data Lake (Bronze/Silver layers)*
 
 ## 📊 Pipeline Visualization
 
-### 📸 Pipeline Overview
-![Pipeline](./architecture/pipeline.png)
+### Azure Data Factory Pipeline
+![Pipeline](./architecture/adf_pipeline.png)
 
-### 📸 Bronze Layer Output
-![Bronze](./architecture/bronze.png)
-
-### 📸 Silver Layer Output
-![Silver](./architecture/silver_layer.png)
+### Bronze Layer Output
+![Bronze](./architecture/bronze_layer.png)
 
 ---
 
