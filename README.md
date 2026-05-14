@@ -102,6 +102,9 @@ Actual data is stored and processed in **Azure Data Lake (Bronze/Silver layers)*
 ### Bronze Layer Output
 ![Bronze](./architecture/bronze_layer.png)
 
+### 📸 Silver Layer Output
+![Silver](./architecture/silver_layer.png)
+
 ---
 
 ## 🧠 What I Learned
