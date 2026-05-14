@@ -24,7 +24,11 @@ Azure Data Factory (Ingestion Pipeline)
 ↓
 Bronze Layer (Raw Data Storage)
 ↓
-[Next: Transformation with Databricks]
+Azure Databricks (Data Cleaning & Transformation)
+↓
+Silver Layer (Cleaned & Enriched Data)
+↓
+[Next: Gold Layer - Analytics]
 
 ---
 
@@ -32,10 +36,29 @@ Bronze Layer (Raw Data Storage)
 
 - Azure Data Factory  
 - Azure Data Lake Storage  
-- Azure Databricks (upcoming)  
+- Azure Databricks  
 - SQL / PySpark  
 
 ---
+
+## 📁 Repository Structure
+
+project/
+│
+├── data/
+│ ├── bronze/ # sample data (raw extracts)
+│ ├── silver/ # cleaned data samples
+│ └── gold/ # future analytics samples
+│
+├── notebooks/
+├── architecture/
+├── README.md
+
+### ⚠️ Note:
+The `data/` folder contains **sample extracts only** for demonstration purposes.  
+Actual data is stored and processed in **Azure Data Lake (Bronze/Silver layers)**.
+---
+
 
 ## 📂 Data Architecture
 
@@ -45,7 +68,16 @@ Bronze Layer (Raw Data Storage)
 
 ### 🟤 Bronze Layer
 - Data ingested using Data Factory  
-- Stored without transformation  
+- Stored without transformation 
+
+### ⚪ Silver Layer
+- Data cleaned and transformed using Databricks  
+- Missing values handled  
+- Data types corrected  
+- New features created:
+  - `line_total` (revenue per line)
+  - `is_return` (returns indicator)
+  - `year`, `month` (time analysis)
 
 ---
 
@@ -55,15 +87,23 @@ Bronze Layer (Raw Data Storage)
 - Dataset uploaded to **Landing zone**
 - Azure Data Factory pipeline copies data to **Bronze layer**
 
+### 2. Data Transformation (Databricks)
+- Data cleaning (null handling, type casting)
+- Feature engineering (revenue, returns, time features)
+- Output written to **Silver layer in Parquet format**
+
 ---
 
 ## 📊 Pipeline Visualization
 
-### Azure Data Factory Pipeline
+### 📸 Pipeline Overview
 ![Pipeline](./architecture/pipeline.png)
 
-### Bronze Layer Output
+### 📸 Bronze Layer Output
 ![Bronze](./architecture/bronze.png)
+
+### 📸 Silver Layer Output
+![Silver](./architecture/silver_layer.png)
 
 ---
 
@@ -71,15 +111,17 @@ Bronze Layer (Raw Data Storage)
 
 - Designing data lake architecture (Landing → Bronze)
 - Building ingestion pipelines with Azure Data Factory
-- Structuring data for scalable processing
+- Performing data cleaning and transformation with PySpark
+- Creating business-ready features for analytics
+- Writing optimized data formats (Parquet)
 
 ---
 
 ## 📈 Next Steps
 
-- Data cleaning with Azure Databricks (Silver layer)
-- Data transformation and aggregation (Gold layer)
-- Business insights generation
+- Build Gold layer (KPIs & aggregations)
+- Implement RFM analysis (customer segmentation)
+- Create dashboards (Power BI / SQL)
 
 ---
 
