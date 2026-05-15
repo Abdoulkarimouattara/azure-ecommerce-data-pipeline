@@ -17,6 +17,7 @@ A company wants to:
 ---
 
 ## 🏗️ Architecture
+```
 Source (Kaggle Dataset)
 ↓
 Landing Zone (Raw Upload)
