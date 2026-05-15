@@ -16,6 +16,7 @@ A company wants to:
 ---
 
 ## 🏗️ Architecture
+```
 Source (Kaggle Dataset)
 ↓
 Landing Zone (Raw Upload)
@@ -29,7 +30,7 @@ Azure Databricks (Data Cleaning & Transformation)
 Silver Layer (Cleaned & Enriched Data)
 ↓
 [Next: Gold Layer - Analytics]
-
+```
 ---
 
 ## ⚙️ Technologies Used
