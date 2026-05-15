@@ -3,15 +3,16 @@
 ## 📌 Overview
 This project demonstrates the design and implementation of a complete data pipeline on Azure.
 
-The goal is to ingest, transform, and analyze e-commerce sales data to generate business insights.
+The pipeline ingests raw data, processes it through multiple layers (Bronze, Silver, Gold), and produces business-ready datasets for analysis.
 
 ---
 
 ## 🎯 Business Use Case
 A company wants to:
-- Track sales performance
+- Monitor sales performance  
 - Identify top-selling products
 - Analyze revenue trends
+- Understand customer behavior
 
 ---
 
@@ -28,14 +29,14 @@ Azure Databricks (Data Cleaning & Transformation)
 ↓
 Silver Layer (Cleaned & Enriched Data)
 ↓
-[Next: Gold Layer - Analytics]
+Gold Layer (Analytics Ready Data)  
 
 ---
 
 ## ⚙️ Technologies Used
 
 - Azure Data Factory  
-- Azure Data Lake Storage  
+- Azure Data Lake Storage (ADLS Gen2)   
 - Azure Databricks  
 - SQL / PySpark  
 
@@ -45,14 +46,24 @@ Silver Layer (Cleaned & Enriched Data)
 ```
 project/
 │
+├── architecture/
+│ ├── adf_pipeline.png
+│ ├── bronze_layer.png
+| ├── silver_layer.png
+│ └── gold_layer.png
+│
 ├── data/
-│ ├── bronze/ # sample data (raw extracts)
-│ ├── silver/ # cleaned data samples
-│ └── gold/ # future analytics samples
+│ ├── bronze/ # sample raw data
+│ ├── silver/ # cleaned sample data
+│ └── gold/ # analytics sample data
 │
 ├── notebooks/
-├── architecture/
+│ ├── 02_bronze_to_silver_data_cleaning
+│ └── 03_silver_to_gold_analytics
+│
 ├── README.md
+
+
 ```
 
 ### ⚠️ Note:
@@ -80,6 +91,29 @@ Actual data is stored and processed in **Azure Data Lake (Bronze/Silver layers)*
   - `is_return` (returns indicator)
   - `year`, `month` (time analysis)
 
+## 🥇 Gold Layer (Business Analytics)
+
+Curated datasets organized by business use case:
+
+### 📊 KPIs
+- Total Revenue  
+- Total Orders  
+- Total Customers  
+- Average Order Value  
+
+### 📈 Trends
+- Monthly revenue  
+- Monthly orders  
+- Monthly customers  
+
+### 📦 Products
+- Top products by revenue  
+- Top products by quantity  
+
+### 👥 Customers
+- Top customers by total spending  
+- RFM segmentation (Recency, Frequency, Monetary) 
+
 ---
 
 ## 🔄 Pipeline Workflow
@@ -88,41 +122,65 @@ Actual data is stored and processed in **Azure Data Lake (Bronze/Silver layers)*
 - Dataset uploaded to **Landing zone**
 - Azure Data Factory pipeline copies data to **Bronze layer**
 
-### 2. Data Transformation (Databricks)
-- Data cleaning (null handling, type casting)
-- Feature engineering (revenue, returns, time features)
-- Output written to **Silver layer in Parquet format**
-
----
-
-## 📊 Pipeline Visualization
-
 ### Azure Data Factory Pipeline
 ![Pipeline](./architecture/adf_pipeline.png)
 
 ### Bronze Layer Output
 ![Bronze](./architecture/bronze_layer.png)
 
+
+### 2. Data Transformation (Databricks)
+- Data cleaning (null handling, type casting)
+- Feature engineering (revenue, returns, time features)
+- Output written to **Silver layer in Parquet format**
+
 ### 📸 Silver Layer Output
 ![Silver](./architecture/silver_layer.png)
+
+
+### 3. Data Analytics (Gold)
+- Compute KPIs  
+- Generate trends  
+- Identify top products & customers  
+- Perform RFM segmentation  
+
+### 📸 Silver Layer Output
+![Silver](./architecture/gold_layer.png)
+
+---
+
+## 📊 Key Insights
+
+- Total revenue exceeds **8.3M**, showing strong business performance  
+- Clear seasonality with peak sales in **Q4**  
+- Revenue driven by both:
+  - High-value products  
+  - High-volume products  
+
+- Customer base includes:
+  - Low-frequency buyers  
+  - High-value loyal customers  
+
+- RFM analysis highlights:
+  - Customer churn opportunities  
+  - High-value segments for retention 
 
 ---
 
 ## 🧠 What I Learned
 
-- Designing data lake architecture (Landing → Bronze)
-- Building ingestion pipelines with Azure Data Factory
-- Performing data cleaning and transformation with PySpark
-- Creating business-ready features for analytics
-- Writing optimized data formats (Parquet)
+- Designing scalable data lake architecture (Bronze → Silver → Gold)  
+- Data transformation using PySpark  
+- Building business-oriented datasets  
+- Performing advanced analytics (KPIs, trends, segmentation)  
 
 ---
 
 ## 📈 Next Steps
 
-- Build Gold layer (KPIs & aggregations)
-- Implement RFM analysis (customer segmentation)
-- Create dashboards (Power BI / SQL)
+- Build dashboards (Power BI / Tableau)  
+- Automate pipeline scheduling  
+- Improve customer segmentation (clustering, ML) 
 
 ---
 
