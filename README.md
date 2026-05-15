@@ -54,9 +54,9 @@ project/
 │ └── gold_layer.png
 │
 ├── data/
-│ ├── bronze/ # sample raw data
-│ ├── silver/ # cleaned sample data
-│ └── gold/ # analytics sample data
+│ ├── bronze/ 
+│ ├── silver/ 
+│ └── gold/ 
 │
 ├── notebooks/
 │ ├── 02_bronze_to_silver_data_cleaning
