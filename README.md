@@ -63,8 +63,6 @@ project/
 │ └── 03_silver_to_gold_analytics
 │
 ├── README.md
-
-
 ```
 
 ### ⚠️ Note:
