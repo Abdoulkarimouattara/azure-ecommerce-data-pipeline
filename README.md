@@ -30,7 +30,9 @@ Azure Databricks (Data Cleaning & Transformation)
 ↓
 Silver Layer (Cleaned & Enriched Data)
 ↓
-[Next: Gold Layer - Analytics]
+Gold Layer (Analytics Ready Data)  
+↓  
+Data Visualization / BI Layer (Power BI, Tableau)
 ```
 ---
 
